@@ -161,8 +161,6 @@ def send_email(config:DictConfig, html:str):
     except Exception as e:
         logger.debug(f"Failed to use TLS. {e}\nTry to use SSL.")
         try:
-            #test
-            print([smtp_server, smtp_port])
             server = smtplib.SMTP_SSL(smtp_server, smtp_port)
         except Exception as e:
             logger.debug(f"Failed to use SSL. {e}\nTry to use plain text.")
